@@ -1,0 +1,17 @@
+{
+ "max_steps": 6,
+ "prices": {"input": 3.00, "output": 15.00},
+ "recipes": [
+  {"name": "gather", "budget": 200, "tool_tags": ["billing"],
+   "sources": ["state", "memory", "tool result"],
+   "quotas": {"memory": 60}, "allow_answer": false},
+  {"name": "diagnose", "budget": 320, "tool_tags": ["network"],
+   "sources": ["state", "memory", "tool result", "history",
+               "summary"],
+   "quotas": {"history": 120, "memory": 60},
+   "allow_answer": false},
+  {"name": "answer", "budget": 260, "tool_tags": [],
+   "sources": ["state", "memory", "tool result", "summary"],
+   "quotas": {"memory": 60}}
+ ]
+}
